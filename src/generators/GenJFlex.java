@@ -33,7 +33,7 @@ public class GenJFlex {
         // Llamada al generador mediante el uso del método Main
         // directamente de la librería sin el uso de la consola.
         jflex.Main.generate(new File(
-                "src"+File.separator+"analizadorlexico01"
-                 + File.separator + "tokens.flex"));
+                "src"+File.separator+"tokenizer"
+                 + File.separator + "basic.jflex"));
     }
 }

@@ -18,6 +18,13 @@
  */
 package tokenizer;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Dhaby Xiloj <dhabyx@gmail.com>
@@ -28,7 +35,33 @@ public class Tokenizer {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        FileReader archivo = null;
+        try {
+            // Lectura de archivo fuente
+            archivo = new FileReader("src"+File.separator+"tokenizer"
+                    + File.separator + "entrada.txt");
+            
+            // Instanciación del Analizador Léxico generado
+            AnalizadorLexico analizadorLexico = new AnalizadorLexico(archivo);
+            
+            // Ejecución del analizador léxico
+            analizadorLexico.yylex();
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Tokenizer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Tokenizer.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                
+                // cerrado del archivo
+                archivo.close();
+                
+            } catch (IOException ex) {
+                Logger.getLogger(Tokenizer.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
     
 }
