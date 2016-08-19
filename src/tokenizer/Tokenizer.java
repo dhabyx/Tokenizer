@@ -35,7 +35,7 @@ public class Tokenizer {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        FileReader archivo = null;
+        FileReader archivo;
         try {
             // Lectura de archivo fuente
             archivo = new FileReader("src"+File.separator+"tokenizer"
@@ -47,21 +47,11 @@ public class Tokenizer {
             // Ejecución del analizador léxico
             analizadorLexico.yylex();
             
+            archivo.close();
             
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Tokenizer.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Tokenizer.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                
-                // cerrado del archivo
-                archivo.close();
-                
-            } catch (IOException ex) {
-                Logger.getLogger(Tokenizer.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        } 
     }
     
 }

@@ -12,7 +12,7 @@ La documentación se puede encontrar en la carpeta doc del proyecto, en especial
 
 # Versiones
 
-Existen varias versiones descargables mediante el uso de ramas, las cuales tienen código que va de nivel en nivel para comprender adecuaamente su utilización.
+Existen varias versiones descargables mediante el uso de ramas, las cuales tienen código que va de nivel en nivel para comprender adecuadamente su uso.
 
 # Licencia
 

@@ -27,4 +27,4 @@ Decimal = 0 | [1-9][0-9]*
 ";" { /* ignorar */ }
 {Decimal} { numeros += "["+ yyline + ":"+ yycolumn + "] " + yytext() + "\n"; }
 {Espacios} {  }
-. { System.err.println("ERROR: Caracter invalido" + yytext() + "["+ yyline + ":"+ yycolumn + "]"); }
+. { System.err.println("ERROR: Caracter inválido" + yytext() + "["+ yyline + ":"+ yycolumn + "]"); }
